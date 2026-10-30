@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 2 - Flexbox Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Full-screen flex container. The @keyframes animation in style.css
+       moves these 6 boxes through all 9 positions. -->
+  <main class="container" aria-label="Animated Flexbox demo">
+    <div class="box box-1">Box 1</div>
+    <div class="box box-2">Box 2</div>
+    <div class="box box-3">Box 3</div>
+    <div class="box box-4">Box 4</div>
+    <div class="box box-5">Box 5</div>
+    <div class="box box-6">Box 6</div>
+  </main>
+
+  <!-- Extra layouts: flex-direction: column and flex-wrap: wrap -->
+  <section class="extras">
+    <h2>Extra layouts</h2>
+
+    <div class="demos">
+
+      <div class="demo-card">
+        <h3>flex-direction: column</h3>
+        <p class="caption">
+          flex-direction: column; justify-content: center;
+          align-items: center; gap: 12px;
+        </p>
+        <div class="demo demo-column">
+          <div class="box box-1">Box 1</div>
+          <div class="box box-2">Box 2</div>
+          <div class="box box-3">Box 3</div>
+          <div class="box box-4">Box 4</div>
+          <div class="box box-5">Box 5</div>
+          <div class="box box-6">Box 6</div>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h3>flex-wrap: wrap</h3>
+        <p class="caption">
+          flex-wrap: wrap; justify-content: space-around;
+          align-items: center; align-content: space-between; gap: 12px;
+        </p>
+        <div class="demo demo-wrap">
+          <div class="box box-1">Box 1</div>
+          <div class="box box-2">Box 2</div>
+          <div class="box box-3">Box 3</div>
+          <div class="box box-4">Box 4</div>
+          <div class="box box-5">Box 5</div>
+          <div class="box box-6">Box 6</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

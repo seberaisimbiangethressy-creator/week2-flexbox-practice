@@ -1,0 +1,201 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* ----------------------------------------------------------
+   1. Full-screen flex container
+   ---------------------------------------------------------- */
+.container {
+  display: flex;
+  flex-direction: row;          /* main axis = horizontal      */
+  flex-wrap: wrap;              /* lets align-content work too */
+  gap: 12px;                    /* space between the boxes     */
+  width: 100%;
+  height: 100vh;                /* fills the whole screen      */
+  padding: 16px;                /* keeps boxes off the edges   */
+  background: radial-gradient(circle at center, #1e293b 0%, #0f172a 75%);
+
+  /* The animation changes the alignment properties over time */
+  animation-name: moveBoxes;
+  animation-duration: 18s;      /* 9 positions x 2 seconds     */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Hover to freeze the animation (handy for screenshots) */
+.container:hover {
+  animation-play-state: paused;
+}
+
+/* ----------------------------------------------------------
+   2. The boxes: each one has its own colour and number
+   ---------------------------------------------------------- */
+.box {
+  display: flex;                /* centres the label inside    */
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;               /* never grow or shrink        */
+  width: 90px;
+  height: 90px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.box-1 { background: #e63946; }
+.box-2 { background: #f4a261; color: #1f2937; }
+.box-3 { background: #2a9d8f; }
+.box-4 { background: #457b9d; }
+.box-5 { background: #8e44ad; }
+.box-6 { background: #e9c46a; color: #1f2937; }
+
+/* ----------------------------------------------------------
+   3. @keyframes: 9 positions, each held for 1/9 of the cycle.
+      justify-content = horizontal (main axis)
+      align-items / align-content = vertical (cross axis)
+      Each position is held for most of its slot, then flips
+      to the next one.
+   ---------------------------------------------------------- */
+@keyframes moveBoxes {
+  /* 1. Top Left */
+  0%, 10% {
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+  /* 2. Top Center */
+  11.1%, 21% {
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+  /* 3. Top Right */
+  22.2%, 32% {
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+  /* 4. Middle Left */
+  33.3%, 43% {
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+  }
+  /* 5. Center */
+  44.4%, 54% {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+  /* 6. Middle Right */
+  55.5%, 65% {
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+  }
+  /* 7. Bottom Left */
+  66.6%, 76% {
+    justify-content: flex-start;
+    align-items: flex-end;
+    align-content: flex-end;
+  }
+  /* 8. Bottom Center */
+  77.7%, 87% {
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-end;
+  }
+  /* 9. Bottom Right */
+  88.8%, 100% {
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
+  }
+}
+
+/* ----------------------------------------------------------
+   4. Extra layouts (flex-direction: column and flex-wrap: wrap)
+   ---------------------------------------------------------- */
+.extras {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 48px 24px;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.extras h2 {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.demos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1 1 340px;
+  max-width: 420px;
+}
+
+.demo-card h3 {
+  font-size: 1.1rem;
+}
+
+.caption {
+  flex: 1;                      /* fills spare space so both demos line up */
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.demo {
+  display: flex;
+  gap: 12px;
+  height: 500px;
+  padding: 16px;
+  background: #ffffff;
+  border: 3px dashed #94a3b8;
+  border-radius: 16px;
+}
+
+.demo .box {
+  width: 60px;
+  height: 60px;
+  font-size: 0.75rem;
+}
+
+/* flex-direction: column stacks the boxes vertically */
+.demo-column {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* flex-wrap: wrap lets boxes flow onto several lines;
+   align-content then spreads those lines vertically */
+.demo-wrap {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between;
+}
