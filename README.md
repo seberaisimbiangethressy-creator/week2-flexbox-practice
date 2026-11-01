@@ -7,7 +7,7 @@ A full-screen Flexbox playground built with **HTML and CSS only** (no JavaScript
 | | Link |
 |---|---|
 | 🎥 **Video walkthrough** | https://youtu.be/yrIpIy9id-0
-| 🌐 **Live demo** |
+| 🌐 **Live demo** |https://seberaisimbiangethressy-creator.github.io/week2-flexbox-practice/
 
 ---
 
