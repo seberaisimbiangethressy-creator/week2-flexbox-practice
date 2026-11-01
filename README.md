@@ -6,7 +6,7 @@ A full-screen Flexbox playground built with **HTML and CSS only** (no JavaScript
 
 | | Link |
 |---|---|
-| 🎥 **Video walkthrough** | 
+| 🎥 **Video walkthrough** | https://youtu.be/yrIpIy9id-0
 | 🌐 **Live demo** |
 
 ---
